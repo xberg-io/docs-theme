@@ -1,0 +1,60 @@
+---
+title: xberg.io docs theme
+description: Live preview of the shared @xberg-io/docs-theme.
+template: splash
+hero:
+  tagline: >-
+    One versioned Starlight theme for every xberg.io documentation site — brand palette, logos,
+    analytics, and llms.txt, baked in.
+  image:
+    file: ../../assets/hero.svg
+  actions:
+    - text: Get started
+      link: /get-started/introduction/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/xberg-io/docs-theme
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard, Tabs, TabItem, Code } from "@astrojs/starlight/components";
+
+This page exists to exercise the theme: hero, cards, tabs, admonitions, tables, and code blocks —
+all styled by `@xberg-io/docs-theme`.
+
+## Why the shared theme
+
+<CardGrid>
+	<Card title="One source of truth" icon="star">
+		Brand colors, fonts, logos, favicon, OG, and analytics live in one package — no per-repo copies.
+	</Card>
+	<Card title="Frictionless install" icon="rocket">
+		`pnpm add @xberg-io/docs-theme`. Contributors just `pnpm install` — the theme resolves, no auth.
+	</Card>
+	<Card title="llms.txt for free" icon="open-book">
+		`starlight-llms-txt` ships with the theme, so every site emits `llms.txt` out of the box.
+	</Card>
+	<Card title="Astro-native" icon="setting">
+		Pure Starlight + `.astro`/CSS source. Nothing to compile; semver bumps flow via Renovate.
+	</Card>
+</CardGrid>
+
+## Add it to a site
+
+<Tabs syncKey="pm">
+	<TabItem label="pnpm">
+		<Code code={`pnpm add @xberg-io/docs-theme @astrojs/starlight astro`} lang="sh" />
+	</TabItem>
+	<TabItem label="npm">
+		<Code code={`npm install @xberg-io/docs-theme @astrojs/starlight astro`} lang="sh" />
+	</TabItem>
+</Tabs>
+
+## Explore
+
+<CardGrid>
+	<LinkCard title="Introduction" href="/get-started/introduction/" description="What the theme provides and how to wire it up." />
+	<LinkCard title="Components demo" href="/guides/components/" description="Admonitions, tabs, tables, and code, themed." />
+</CardGrid>

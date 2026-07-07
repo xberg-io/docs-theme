@@ -1,0 +1,106 @@
+/* @xberg-io/docs-theme — brand theme for xberg.io docs sites.
+   Palette (assets/color_tokens.json):
+     navy #06111E · cyan #00E0C2 · blue #2EBBFF · purple #7B5CFF · white #FFFFFF
+   Accent follows the Zensical convention: cyan in dark mode, purple in light mode. */
+
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&display=swap");
+
+:root {
+	--xb-navy: #06111e;
+	--xb-cyan: #00e0c2;
+	--xb-blue: #2ebbff;
+	--xb-purple: #7b5cff;
+
+	--sl-font: "Exo 2", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+	/* Dark theme is the default. Accent ramp = cyan. */
+	--sl-color-accent-low: #06342e;
+	--sl-color-accent: #00e0c2;
+	--sl-color-accent-high: #9ff5ea;
+
+	/* Navy-tinted gray ramp so surfaces read as deep navy, not neutral black. */
+	--sl-color-white: #f4f7fa;
+	--sl-color-gray-1: #dfe6ee;
+	--sl-color-gray-2: #b3bfcc;
+	--sl-color-gray-3: #7f8b99;
+	--sl-color-gray-4: #4b5b6b;
+	--sl-color-gray-5: #1f2d3d;
+	--sl-color-gray-6: #0d1b28;
+	--sl-color-black: #06111e;
+}
+
+:root[data-theme="light"] {
+	/* Light theme accent = purple, nudged darker for contrast on white. */
+	--sl-color-accent-low: #e9e3ff;
+	--sl-color-accent: #6a3fe0;
+	--sl-color-accent-high: #2a1a54;
+
+	--sl-color-white: #06111e;
+	--sl-color-gray-1: #1f2d3d;
+	--sl-color-gray-2: #3b4857;
+	--sl-color-gray-3: #5c6875;
+	--sl-color-gray-4: #8a95a1;
+	--sl-color-gray-5: #c7cdd4;
+	--sl-color-gray-6: #eceff2;
+	--sl-color-gray-7: #f6f8fa;
+	--sl-color-black: #ffffff;
+}
+
+/* --- Nav logo (SiteTitle override) --------------------------------------- */
+.xb-site-title {
+	align-items: center;
+	gap: 0.5rem;
+	line-height: 0;
+}
+.xb-logo {
+	height: 1.75rem;
+	width: auto;
+}
+:root[data-theme="dark"] .xb-logo-light,
+:root[data-theme="light"] .xb-logo-dark {
+	display: none;
+}
+
+/* --- Ambient brand glow behind the hero, echoing the brand banner. -------- */
+[data-has-hero] .page {
+	background:
+		radial-gradient(60ch 40ch at 15% -10%, color-mix(in oklch, var(--xb-purple) 14%, transparent), transparent 70%),
+		radial-gradient(50ch 32ch at 88% -6%, color-mix(in oklch, var(--xb-cyan) 12%, transparent), transparent 70%);
+}
+
+/* --- Hero: gradient primary CTA. ----------------------------------------- */
+.hero .stack a[data-variant="primary"] {
+	background: linear-gradient(120deg, var(--xb-cyan), var(--xb-blue) 45%, var(--xb-purple));
+	border: none;
+	color: #04121b;
+	font-weight: 600;
+	box-shadow: 0 8px 30px -12px color-mix(in oklch, var(--xb-blue) 80%, transparent);
+}
+.hero .stack a[data-variant="primary"]:hover {
+	filter: brightness(1.06);
+}
+
+/* --- Card grid: lift the surface, hairline brand edge on hover. ---------- */
+.card {
+	background: color-mix(in oklch, var(--sl-color-gray-6) 60%, transparent);
+	border: 1px solid var(--sl-color-gray-5);
+	transition:
+		border-color 0.2s ease,
+		transform 0.2s ease;
+}
+.card:hover {
+	border-color: color-mix(in oklch, var(--xb-cyan) 55%, var(--sl-color-gray-5));
+	transform: translateY(-2px);
+}
+.card .icon {
+	color: var(--xb-cyan);
+	background: color-mix(in oklch, var(--xb-cyan) 12%, transparent);
+}
+
+/* --- Tighter, denser tables — reference pages are table-heavy. ----------- */
+.sl-markdown-content table {
+	font-size: var(--sl-text-sm);
+}
+.sl-markdown-content th {
+	color: var(--sl-color-white);
+}

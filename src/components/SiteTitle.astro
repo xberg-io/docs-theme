@@ -1,0 +1,15 @@
+---
+// Nav logo override: renders the shared xberg wordmark from the assets CDN,
+// with light/dark variants toggled by CSS in brand.css. Sidesteps Astro's
+// image pipeline so the logo needs no local file in each consuming repo.
+import type { Props } from "@astrojs/starlight/props";
+
+const CDN = "https://cdn.jsdelivr.net/gh/xberg-io/assets@v1/docs";
+const href = import.meta.env.BASE_URL || "/";
+const label = Astro.props.siteTitle;
+---
+
+<a href={href} class="site-title xb-site-title sl-flex" aria-label={label}>
+	<img class="xb-logo xb-logo-dark" alt={label} src={`${CDN}/navbar-logo-dark.svg`} />
+	<img class="xb-logo xb-logo-light" alt={label} src={`${CDN}/navbar-logo-light.svg`} />
+</a>

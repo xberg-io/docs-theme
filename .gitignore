@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.astro/
+*.tsbuildinfo
+.npmrc.publish
+.DS_Store
