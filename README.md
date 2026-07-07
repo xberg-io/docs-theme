@@ -84,8 +84,8 @@ pnpm --dir example build
 
 ## Publish
 
-First publish is manual (`scripts/first-publish.sh`); thereafter cut a GitHub Release and
-`.github/workflows/publish.yaml` publishes with OIDC Trusted Publishing + provenance.
+Cut a GitHub Release (or run the Publish workflow); `.github/workflows/publish.yaml` publishes
+with npm Trusted Publishing (OIDC) + provenance.
 
 ## License
 
