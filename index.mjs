@@ -9,7 +9,7 @@
  * @typedef {import("./index.d.ts").XbergStarlightOptions} XbergStarlightOptions
  */
 
-const CDN = "https://cdn.jsdelivr.net/gh/xberg-io/assets@v1";
+const CDN = "https://cdn.jsdelivr.net/gh/xberg-io/assets@v1.0.0";
 
 // Canonical Google Analytics IDs — shared across every xberg.io docs site.
 // Override per-site only with an explicit business reason.

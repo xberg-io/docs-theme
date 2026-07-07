@@ -1,6 +1,6 @@
 {
   "name": "@xberg-io/docs-theme",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shared Astro Starlight theme for xberg.io documentation sites.",
   "type": "module",
   "license": "MIT",
