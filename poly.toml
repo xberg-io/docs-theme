@@ -1,0 +1,17 @@
+[defaults]
+line_length = 120
+line_ending = "lf"
+final_newline = true
+trim_trailing_whitespace = true
+
+[discovery]
+exclude = ["**/node_modules/**", "**/dist/**", "**/.astro/**", "**/pnpm-lock.yaml"]
+
+[hooks]
+stages = ["pre-commit"]
+
+[hooks.builtin]
+lint = { exclude = ["**/node_modules/**", "**/dist/**", "**/.astro/**", "**/pnpm-lock.yaml"] }
+fmt = { exclude = ["**/node_modules/**", "**/dist/**", "**/.astro/**", "**/pnpm-lock.yaml"] }
+commit = { stages = ["commit-msg"] }
+file_safety = { exclude = ["**/pnpm-lock.yaml"] }

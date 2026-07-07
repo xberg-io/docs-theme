@@ -19,34 +19,37 @@ const DEFAULT_OG_IMAGE = `${CDN}/social/open-graph-card.png`;
 
 /** @param {string | undefined} gaId @param {string | undefined} adsId */
 function analyticsHead(gaId, adsId) {
-	if (!gaId) return [];
-	const ids = [gaId, adsId].filter(Boolean);
-	const config = ids.map((id) => `gtag('config','${id}');`).join("");
-	return [
-		{ tag: "script", attrs: { async: true, src: `https://www.googletagmanager.com/gtag/js?id=${gaId}` } },
-		{
-			tag: "script",
-			content: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());${config}`,
-		},
-	];
+  if (!gaId) return [];
+  const ids = [gaId, adsId].filter(Boolean);
+  const config = ids.map((id) => `gtag('config','${id}');`).join("");
+  return [
+    { tag: "script", attrs: { async: true, src: `https://www.googletagmanager.com/gtag/js?id=${gaId}` } },
+    {
+      tag: "script",
+      content: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());${config}`,
+    },
+  ];
 }
 
 function faviconHead() {
-	return [
-		{ tag: "link", attrs: { rel: "icon", href: `${CDN}/favicon/favicon.ico`, sizes: "any" } },
-		{ tag: "link", attrs: { rel: "icon", type: "image/svg+xml", href: `${CDN}/docs/app-icon.svg` } },
-		{ tag: "link", attrs: { rel: "icon", type: "image/png", sizes: "32x32", href: `${CDN}/favicon/favicon-32x32.png` } },
-		{ tag: "link", attrs: { rel: "apple-touch-icon", href: `${CDN}/favicon/apple-touch-icon-180x180.png` } },
-	];
+  return [
+    { tag: "link", attrs: { rel: "icon", href: `${CDN}/favicon/favicon.ico`, sizes: "any" } },
+    { tag: "link", attrs: { rel: "icon", type: "image/svg+xml", href: `${CDN}/docs/app-icon.svg` } },
+    {
+      tag: "link",
+      attrs: { rel: "icon", type: "image/png", sizes: "32x32", href: `${CDN}/favicon/favicon-32x32.png` },
+    },
+    { tag: "link", attrs: { rel: "apple-touch-icon", href: `${CDN}/favicon/apple-touch-icon-180x180.png` } },
+  ];
 }
 
 /** @param {string} ogImage */
 function socialHead(ogImage) {
-	return [
-		{ tag: "meta", attrs: { property: "og:image", content: ogImage } },
-		{ tag: "meta", attrs: { name: "twitter:card", content: "summary_large_image" } },
-		{ tag: "meta", attrs: { name: "twitter:image", content: ogImage } },
-	];
+  return [
+    { tag: "meta", attrs: { property: "og:image", content: ogImage } },
+    { tag: "meta", attrs: { name: "twitter:card", content: "summary_large_image" } },
+    { tag: "meta", attrs: { name: "twitter:image", content: ogImage } },
+  ];
 }
 
 /**
@@ -77,39 +80,38 @@ function socialHead(ogImage) {
  * @param {XbergStarlightOptions} options
  */
 export function xbergStarlightConfig(options) {
-	const {
-		title,
-		description,
-		githubUrl,
-		editBaseUrl,
-		ogImage = DEFAULT_OG_IMAGE,
-		googleAnalyticsId = DEFAULT_GA_ID,
-		googleAdsId = DEFAULT_ADS_ID,
-		sidebar,
-		social,
-		plugins = [],
-		head = [],
-		customCss = [],
-		components = {},
-		starlight: starlightOverrides = {},
-	} = options;
+  const {
+    title,
+    description,
+    githubUrl,
+    editBaseUrl,
+    ogImage = DEFAULT_OG_IMAGE,
+    googleAnalyticsId = DEFAULT_GA_ID,
+    googleAdsId = DEFAULT_ADS_ID,
+    sidebar,
+    social,
+    plugins = [],
+    head = [],
+    customCss = [],
+    components = {},
+    starlight: starlightOverrides = {},
+  } = options;
 
-	const resolvedSocial =
-		social ?? (githubUrl ? [{ icon: "github", label: "GitHub", href: githubUrl }] : []);
+  const resolvedSocial = social ?? (githubUrl ? [{ icon: "github", label: "GitHub", href: githubUrl }] : []);
 
-	return {
-		// Escape hatch first, so branding below always wins.
-		...starlightOverrides,
-		title,
-		...(description ? { description } : {}),
-		social: resolvedSocial,
-		...(editBaseUrl ? { editLink: { baseUrl: editBaseUrl } } : {}),
-		customCss: ["@xberg-io/docs-theme/styles/brand.css", ...customCss],
-		components: { SiteTitle: "@xberg-io/docs-theme/components/SiteTitle.astro", ...components },
-		head: [...faviconHead(), ...socialHead(ogImage), ...analyticsHead(googleAnalyticsId, googleAdsId), ...head],
-		...(plugins.length ? { plugins } : {}),
-		...(sidebar ? { sidebar } : {}),
-	};
+  return {
+    // Escape hatch first, so branding below always wins.
+    ...starlightOverrides,
+    title,
+    ...(description ? { description } : {}),
+    social: resolvedSocial,
+    ...(editBaseUrl ? { editLink: { baseUrl: editBaseUrl } } : {}),
+    customCss: ["@xberg-io/docs-theme/styles/brand.css", ...customCss],
+    components: { SiteTitle: "@xberg-io/docs-theme/components/SiteTitle.astro", ...components },
+    head: [...faviconHead(), ...socialHead(ogImage), ...analyticsHead(googleAnalyticsId, googleAdsId), ...head],
+    ...(plugins.length ? { plugins } : {}),
+    ...(sidebar ? { sidebar } : {}),
+  };
 }
 
 export default xbergStarlightConfig;
