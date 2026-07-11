@@ -1,18 +1,9 @@
-// This module is loaded by Astro's config loader as an external node_modules
-// package, so it must import NOTHING with a TypeScript entry point (Node's
-// strip-types loader rejects .ts under node_modules). It stays import-free:
-// it only shapes a plain config object with string references that Vite/Starlight
-// resolve later during the build. Plugins like starlight-llms-txt are added by
-// the consumer's own config (where Astro bundles them), via the `plugins` option.
-
 /**
  * @typedef {import("./index.d.ts").XbergStarlightOptions} XbergStarlightOptions
  */
 
 const CDN = "https://cdn.jsdelivr.net/gh/xberg-io/assets@v1.0.0";
 
-// Canonical Google Analytics IDs — shared across every xberg.io docs site.
-// Override per-site only with an explicit business reason.
 const DEFAULT_GA_ID = "G-8G4NQW55PF";
 const DEFAULT_ADS_ID = "AW-17853694443";
 const DEFAULT_OG_IMAGE = `${CDN}/social/open-graph-card.png`;
@@ -100,7 +91,6 @@ export function xbergStarlightConfig(options) {
   const resolvedSocial = social ?? (githubUrl ? [{ icon: "github", label: "GitHub", href: githubUrl }] : []);
 
   return {
-    // Escape hatch first, so branding below always wins.
     ...starlightOverrides,
     title,
     ...(description ? { description } : {}),

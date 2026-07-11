@@ -4,7 +4,6 @@ import starlight from "@astrojs/starlight";
 import starlightLlmsTxt from "starlight-llms-txt";
 import { xbergStarlightConfig } from "@xberg-io/docs-theme";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://docs.xberg.io",
   integrations: [

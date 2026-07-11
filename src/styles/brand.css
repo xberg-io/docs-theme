@@ -1,8 +1,3 @@
-/* @xberg-io/docs-theme — brand theme for xberg.io docs sites.
-   Palette (assets/color_tokens.json):
-     navy #06111E · cyan #00E0C2 · blue #2EBBFF · purple #7B5CFF · white #FFFFFF
-   Accent: cyan in dark mode, purple in light mode. */
-
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&display=swap");
 
 :root {
@@ -13,12 +8,10 @@
 
   --sl-font: "Exo 2", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-  /* Dark theme is the default. Accent ramp = cyan. */
   --sl-color-accent-low: #06342e;
   --sl-color-accent: #00e0c2;
   --sl-color-accent-high: #9ff5ea;
 
-  /* Navy-tinted gray ramp so surfaces read as deep navy, not neutral black. */
   --sl-color-white: #f4f7fa;
   --sl-color-gray-1: #dfe6ee;
   --sl-color-gray-2: #b3bfcc;
@@ -30,7 +23,6 @@
 }
 
 :root[data-theme="light"] {
-  /* Light theme accent = purple, nudged darker for contrast on white. */
   --sl-color-accent-low: #e9e3ff;
   --sl-color-accent: #6a3fe0;
   --sl-color-accent-high: #2a1a54;
@@ -46,7 +38,6 @@
   --sl-color-black: #ffffff;
 }
 
-/* --- Nav logo (SiteTitle override) --------------------------------------- */
 .xb-site-title {
   align-items: center;
   gap: 0.5rem;
@@ -61,14 +52,12 @@
   display: none;
 }
 
-/* --- Ambient brand glow behind the hero, echoing the brand banner. -------- */
 [data-has-hero] .page {
   background:
     radial-gradient(60ch 40ch at 15% -10%, color-mix(in oklch, var(--xb-purple) 14%, transparent), transparent 70%),
     radial-gradient(50ch 32ch at 88% -6%, color-mix(in oklch, var(--xb-cyan) 12%, transparent), transparent 70%);
 }
 
-/* --- Hero: gradient primary CTA. ----------------------------------------- */
 .hero .stack a[data-variant="primary"] {
   background: linear-gradient(120deg, var(--xb-cyan), var(--xb-blue) 45%, var(--xb-purple));
   border: none;
@@ -80,7 +69,6 @@
   filter: brightness(1.06);
 }
 
-/* --- Card grid: lift the surface, hairline brand edge on hover. ---------- */
 .card {
   background: color-mix(in oklch, var(--sl-color-gray-6) 60%, transparent);
   border: 1px solid var(--sl-color-gray-5);
@@ -95,7 +83,6 @@
   background: color-mix(in oklch, var(--xb-cyan) 12%, transparent);
 }
 
-/* --- Tighter, denser tables — reference pages are table-heavy. ----------- */
 .sl-markdown-content table {
   font-size: var(--sl-text-sm);
 }
@@ -103,8 +90,6 @@
   color: var(--sl-color-white);
 }
 
-/* --- Version badge — alef emits <span class="version-badge">vX.Y.Z</span>
-   in generated reference headings; render it as a small brand pill. -------- */
 .sl-markdown-content .version-badge {
   display: inline-block;
   margin-inline-start: 0.5em;
