@@ -7,6 +7,7 @@ const CDN = "https://cdn.jsdelivr.net/gh/xberg-io/assets@v1.0.0";
 const DEFAULT_GA_ID = "G-8G4NQW55PF";
 const DEFAULT_ADS_ID = "AW-17853694443";
 const DEFAULT_OG_IMAGE = `${CDN}/social/open-graph-card.png`;
+const REDDIT_URL = "https://www.reddit.com/r/xberg/";
 
 /** @param {string | undefined} gaId @param {string | undefined} adsId */
 function analyticsHead(gaId, adsId) {
@@ -88,7 +89,11 @@ export function xbergStarlightConfig(options) {
     starlight: starlightOverrides = {},
   } = options;
 
-  const resolvedSocial = social ?? (githubUrl ? [{ icon: "github", label: "GitHub", href: githubUrl }] : []);
+  const defaultSocial = [
+    ...(githubUrl ? [{ icon: "github", label: "GitHub", href: githubUrl }] : []),
+    { icon: "reddit", label: "Reddit", href: REDDIT_URL },
+  ];
+  const resolvedSocial = social ?? defaultSocial;
 
   return {
     ...starlightOverrides,

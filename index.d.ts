@@ -6,7 +6,7 @@ export interface XbergStarlightOptions {
   title: string;
   /** Meta description / default social description. */
   description?: string;
-  /** GitHub repo URL — drives the default social link. */
+  /** GitHub repo URL — drives the default GitHub social link (alongside the shared r/xberg link). */
   githubUrl?: string;
   /** `editLink.baseUrl`, e.g. `https://github.com/xberg-io/<repo>/edit/main/docs-site/`. */
   editBaseUrl?: string;
@@ -18,7 +18,7 @@ export interface XbergStarlightOptions {
   googleAdsId?: string;
   /** Starlight sidebar config. */
   sidebar?: StarlightUserConfig["sidebar"];
-  /** Starlight social links. Defaults to a single GitHub link from `githubUrl`. */
+  /** Starlight social links. Defaults to a GitHub link from `githubUrl` plus the shared r/xberg link. */
   social?: StarlightUserConfig["social"];
   /**
    * Starlight plugins, e.g. `starlightLlmsTxt()`. Import them in your own config

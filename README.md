@@ -66,7 +66,7 @@ in the brand stylesheet, the CDN logo (`SiteTitle` override), and the favicon/OG
 | `googleAnalyticsId` | `G-8G4NQW55PF`                            | Canonical shared GA4 property.                    |
 | `googleAdsId`       | `AW-17853694443`                          | Canonical shared Ads account.                     |
 | `sidebar`           | —                                         | Starlight sidebar.                                |
-| `social`            | GitHub from `githubUrl`                    | Starlight social links.                           |
+| `social`            | GitHub from `githubUrl` + shared r/xberg   | Starlight social links.                           |
 | `plugins`           | `[]`                                      | Starlight plugin instances, e.g. `starlightLlmsTxt()`. |
 | `head` / `customCss` / `components` | —                         | Appended/merged after the theme's own.            |
 | `starlight`         | —                                         | Escape hatch for extra Starlight config.          |
