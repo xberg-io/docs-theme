@@ -1,9 +1,10 @@
 # @xberg-io/docs-theme
 
 Shared [Astro Starlight](https://starlight.astro.build) theme for xberg.io documentation sites.
-One versioned package carries the brand — navy/cyan/blue/purple palette, Exo 2, CDN logos and
-favicons, canonical Google Analytics, Open Graph defaults, and `llms.txt` generation — so every
-repo's docs stay consistent without copying assets around.
+One versioned package carries the Kreuzberg Cloud documentation system — warm cream/deep-purple
+surfaces, teal accents, Geist typography, square rule-bound components, CDN assets, analytics,
+Open Graph defaults, and `llms.txt` generation — so every repo stays consistent without copying
+the presentation layer around.
 
 ## Install
 
@@ -58,7 +59,7 @@ in the brand stylesheet, the CDN logo (`SiteTitle` override), and the favicon/OG
 
 | Option              | Default                                   | Notes                                             |
 | ------------------- | ----------------------------------------- | ------------------------------------------------- |
-| `title` (required)  | —                                         | Tab title + nav logo `aria-label`.                |
+| `title` (required)  | —                                         | Tab title + product name beside the nav icon.     |
 | `description`       | —                                         | Meta / social description.                        |
 | `githubUrl`         | —                                         | Drives the default GitHub social link.            |
 | `editBaseUrl`       | —                                         | `editLink.baseUrl`.                               |
@@ -66,7 +67,7 @@ in the brand stylesheet, the CDN logo (`SiteTitle` override), and the favicon/OG
 | `googleAnalyticsId` | `G-8G4NQW55PF`                            | Canonical shared GA4 property.                    |
 | `googleAdsId`       | `AW-17853694443`                          | Canonical shared Ads account.                     |
 | `sidebar`           | —                                         | Starlight sidebar.                                |
-| `social`            | GitHub from `githubUrl` + shared r/xberg   | Starlight social links.                           |
+| `social`            | GitHub + shared Discord + shared r/xberg   | Starlight social links.                           |
 | `plugins`           | `[]`                                      | Starlight plugin instances, e.g. `starlightLlmsTxt()`. |
 | `head` / `customCss` / `components` | —                         | Appended/merged after the theme's own.            |
 | `starlight`         | —                                         | Escape hatch for extra Starlight config.          |

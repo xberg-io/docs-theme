@@ -6,7 +6,7 @@ export interface XbergStarlightOptions {
   title: string;
   /** Meta description / default social description. */
   description?: string;
-  /** GitHub repo URL — drives the default GitHub social link (alongside the shared r/xberg link). */
+  /** GitHub repo URL — drives the default GitHub social link alongside Discord and Reddit. */
   githubUrl?: string;
   /** `editLink.baseUrl`, e.g. `https://github.com/xberg-io/<repo>/edit/main/docs-site/`. */
   editBaseUrl?: string;
@@ -18,7 +18,7 @@ export interface XbergStarlightOptions {
   googleAdsId?: string;
   /** Starlight sidebar config. */
   sidebar?: StarlightUserConfig["sidebar"];
-  /** Starlight social links. Defaults to a GitHub link from `githubUrl` plus the shared r/xberg link. */
+  /** Starlight social links. Defaults to GitHub plus the shared xberg Discord and Reddit communities. */
   social?: StarlightUserConfig["social"];
   /**
    * Starlight plugins, e.g. `starlightLlmsTxt()`. Import them in your own config
@@ -29,7 +29,7 @@ export interface XbergStarlightOptions {
   head?: StarlightUserConfig["head"];
   /** Extra `customCss` entries, appended after the brand stylesheet. */
   customCss?: string[];
-  /** Extra component overrides, merged over the theme's (theme wins on conflict keys it sets). */
+  /** Extra component overrides, merged after the theme's defaults (consumer overrides win). */
   components?: StarlightUserConfig["components"];
   /** Escape hatch: arbitrary extra Starlight config (branding keys are locked). */
   starlight?: Partial<StarlightUserConfig>;

@@ -9,7 +9,7 @@ supplies everything else.
 
 ## What you get
 
-- Navy/cyan/blue/purple palette with Exo 2, in both light and dark mode.
+- Cream/deep-purple surfaces with Geist and Geist Mono, in both light and dark mode.
 - Nav logo, favicon, and OG image pulled from the `xberg-io/assets` CDN.
 - Canonical Google Analytics + Ads tags.
 - `llms.txt` generation via `starlight-llms-txt`.
