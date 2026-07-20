@@ -1,60 +1,77 @@
 ---
 title: xberg.io docs theme
-description: Live preview of the shared @xberg-io/docs-theme.
+description: The shared documentation system for xberg.io products.
 template: splash
-hero:
-  tagline: >-
-    One versioned Starlight theme for every xberg.io documentation site — brand palette, logos,
-    analytics, and llms.txt, baked in.
-  image:
-    file: ../../assets/hero.svg
-  actions:
-    - text: Get started
-      link: /get-started/introduction/
-      icon: right-arrow
-      variant: primary
-    - text: View on GitHub
-      link: https://github.com/xberg-io/docs-theme
-      icon: external
-      variant: minimal
+pagefind: false
 ---
 
-import { Card, CardGrid, LinkCard, Tabs, TabItem, Code } from "@astrojs/starlight/components";
+<div className="xb-landing">
+  <section className="xb-landing-hero">
+    <div className="xb-landing-copy">
+      <p className="xb-eyebrow">xberg documentation system</p>
+      <h1>Documentation that feels like part of the <em>product.</em></h1>
+      <p className="xb-lede">
+        One precise, reusable theme for every xberg product. Designed for fast reading,
+        effortless navigation, and technical ideas that deserve clarity.
+      </p>
+      <div className="xb-actions">
+        <a className="xb-button xb-button-primary" href="/get-started/introduction/">Start building <span aria-hidden="true">→</span></a>
+        <a className="xb-button" href="https://github.com/xberg-io/docs-theme">View source <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
 
-This page exists to exercise the theme: hero, cards, tabs, admonitions, tables, and code blocks —
-all styled by `@xberg-io/docs-theme`.
+  <section className="xb-proof" aria-label="Theme highlights">
+    <div><strong>01</strong><span>shared package</span></div>
+    <div><strong>100%</strong><span>Astro native</span></div>
+    <div><strong>0</strong><span>runtime dependencies</span></div>
+    <div><strong>∞</strong><span>product docs</span></div>
+  </section>
 
-## Why the shared theme
+  <section className="xb-landing-section">
+    <div className="xb-section-heading">
+      <p className="xb-eyebrow">Designed as a system</p>
+      <h2>Everything your documentation needs. <span className="xb-gradient-text">Nothing it doesn’t.</span></h2>
+      <p>From the first navigation click to the last code sample, every surface follows the same visual language.</p>
+    </div>
 
-<CardGrid>
-	<Card title="One source of truth" icon="star">
-		Brand colors, fonts, logos, favicon, OG, and analytics live in one package — no per-repo copies.
-	</Card>
-	<Card title="Frictionless install" icon="rocket">
-		`pnpm add @xberg-io/docs-theme`. Contributors just `pnpm install` — the theme resolves, no auth.
-	</Card>
-	<Card title="llms.txt for free" icon="open-book">
-		`starlight-llms-txt` ships with the theme, so every site emits `llms.txt` out of the box.
-	</Card>
-	<Card title="Astro-native" icon="setting">
-		Pure Starlight + `.astro`/CSS source. Nothing to compile; semver bumps flow via Renovate.
-	</Card>
-</CardGrid>
+    <div className="xb-feature-grid">
+      <article className="xb-feature xb-feature-wide">
+        <div>
+          <h3>A single source of truth</h3>
+          <p>Typography, color, navigation, content components, metadata, analytics, and assets stay aligned across every product.</p>
+        </div>
+      </article>
+      <article className="xb-feature">
+        <div>
+          <h3>Built for reading</h3>
+          <p>Strong hierarchy, restrained line lengths, and clear wayfinding keep complex technical material approachable.</p>
+        </div>
+      </article>
+      <article className="xb-feature">
+        <div>
+          <h3>Brand by default</h3>
+          <p>Install once. Every page inherits the xberg visual language without copying styles or assets between repositories.</p>
+        </div>
+      </article>
+    </div>
+  </section>
 
-## Add it to a site
+  <section className="xb-workflow">
+    <div className="xb-section-heading">
+      <p className="xb-eyebrow">From zero to documented</p>
+      <h2>A clear path to a <span className="xb-gradient-text">coherent result.</span></h2>
+    </div>
+    <ol>
+      <li><div><h3>Install</h3><code>pnpm add @xberg-io/docs-theme</code></div></li>
+      <li><div><h3>Configure</h3><p>Add the product title, repository, and navigation.</p></div></li>
+      <li><div><h3>Write</h3><p>Focus on the documentation. The system handles presentation.</p></div></li>
+    </ol>
+  </section>
 
-<Tabs syncKey="pm">
-	<TabItem label="pnpm">
-		<Code code={`pnpm add @xberg-io/docs-theme @astrojs/starlight astro`} lang="sh" />
-	</TabItem>
-	<TabItem label="npm">
-		<Code code={`npm install @xberg-io/docs-theme @astrojs/starlight astro`} lang="sh" />
-	</TabItem>
-</Tabs>
-
-## Explore
-
-<CardGrid>
-	<LinkCard title="Introduction" href="/get-started/introduction/" description="What the theme provides and how to wire it up." />
-	<LinkCard title="Components demo" href="/guides/components/" description="Admonitions, tabs, tables, and code, themed." />
-</CardGrid>
+  <section className="xb-landing-cta">
+    <p className="xb-eyebrow">Make it yours</p>
+    <h2>Build documentation people <span className="xb-gradient-text">actually want to use.</span></h2>
+    <a className="xb-button xb-button-primary" href="/get-started/introduction/">Read the introduction <span aria-hidden="true">→</span></a>
+  </section>
+</div>

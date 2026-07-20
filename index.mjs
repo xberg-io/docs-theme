@@ -8,6 +8,7 @@ const DEFAULT_GA_ID = "G-8G4NQW55PF";
 const DEFAULT_ADS_ID = "AW-17853694443";
 const DEFAULT_OG_IMAGE = `${CDN}/social/open-graph-card.png`;
 const REDDIT_URL = "https://www.reddit.com/r/xberg/";
+const DISCORD_URL = "https://discord.gg/xt9WY3GnKR";
 
 /** @param {string | undefined} gaId @param {string | undefined} adsId */
 function analyticsHead(gaId, adsId) {
@@ -45,8 +46,8 @@ function socialHead(ogImage) {
 }
 
 /**
- * Build a Starlight config carrying the shared xberg.io brand: navy/cyan/blue/purple
- * palette, Exo 2, CDN logos/favicons, canonical Google Analytics, and OG defaults.
+ * Build a Starlight config carrying the shared xberg.io brand: cream/deep-purple
+ * surfaces, Geist typography, CDN logos/favicons, canonical analytics, and OG defaults.
  * Wrap the result with `starlight()` in your `astro.config`:
  *
  * ```js
@@ -91,6 +92,7 @@ export function xbergStarlightConfig(options) {
 
   const defaultSocial = [
     ...(githubUrl ? [{ icon: "github", label: "GitHub", href: githubUrl }] : []),
+    { icon: "discord", label: "Discord", href: DISCORD_URL },
     { icon: "reddit", label: "Reddit", href: REDDIT_URL },
   ];
   const resolvedSocial = social ?? defaultSocial;
