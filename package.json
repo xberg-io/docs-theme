@@ -1,6 +1,6 @@
 {
   "name": "@xberg-io/docs-theme",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Shared Astro Starlight theme for xberg.io documentation sites.",
   "type": "module",
   "license": "MIT",
@@ -14,7 +14,13 @@
   "bugs": {
     "url": "https://github.com/xberg-io/docs-theme/issues"
   },
-  "keywords": ["astro", "starlight", "starlight-theme", "documentation", "xberg"],
+  "keywords": [
+    "astro",
+    "starlight",
+    "starlight-theme",
+    "documentation",
+    "xberg"
+  ],
   "exports": {
     ".": {
       "types": "./index.d.ts",
@@ -23,8 +29,14 @@
     "./styles/brand.css": "./src/styles/brand.css",
     "./components/SiteTitle.astro": "./src/components/SiteTitle.astro"
   },
-  "files": ["index.mjs", "index.d.ts", "src"],
-  "sideEffects": ["*.css"],
+  "files": [
+    "index.mjs",
+    "index.d.ts",
+    "src"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
   "peerDependencies": {
     "@astrojs/starlight": ">=0.41.0",
     "astro": ">=7.0.0"
