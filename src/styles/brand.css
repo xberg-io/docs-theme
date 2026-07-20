@@ -1294,7 +1294,9 @@ main:has(.xb-landing) .sl-container {
 }
 
 @media (max-width: 64rem) {
-  .xb-landing-hero { min-height: 0; }
+  .xb-landing-hero {
+    min-height: 0;
+  }
 }
 
 @media (max-width: 49.99rem) {
@@ -1324,7 +1326,7 @@ main:has(.xb-landing) .sl-container {
     border-inline-start: 0;
   }
 
-  .xb-proof > div:nth-child(n + 3) {
+  .xb-proof > div:nth-child(n+3) {
     border-top: 1px solid var(--xb-border);
   }
 

@@ -4,3 +4,4 @@ dist/
 *.tsbuildinfo
 .npmrc.publish
 .DS_Store
+.claude/
