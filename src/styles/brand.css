@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@400;500;600;700&display=swap");
 
-/* Kreuzberg Cloud docs design system. Keep these tokens in sync with the
+/* xberg.io docs design system. Keep these tokens in sync with the
    reference Next.js docs site in docs-site/styles/globals.css. */
 :root {
   --xberg-deep-navy: oklch(0.1695 0.022 267.29);

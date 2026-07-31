@@ -3,7 +3,7 @@ title: Introduction
 description: What the shared theme provides and how to adopt it.
 ---
 
-`@xberg-io/docs-theme` wraps `@astrojs/starlight` with the xberg.io brand. Call `xbergStarlight()`
+`@xberg-io/docs-theme` wraps `@astrojs/starlight` with the xberg.io brand. Call `xbergStarlightConfig()`
 in your `astro.config.mjs` and pass the per-site bits (`title`, `githubUrl`, `sidebar`); the theme
 supplies everything else.
 

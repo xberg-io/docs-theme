@@ -30,9 +30,10 @@ Destructive things look like this.
 ## Code
 
 ```ts
-import { xbergStarlight } from "@xberg-io/docs-theme";
+import starlight from "@astrojs/starlight";
+import { xbergStarlightConfig } from "@xberg-io/docs-theme";
 
 export default {
-	integrations: [xbergStarlight({ title: "my-site", githubUrl: "https://github.com/xberg-io/my-site" })],
+	integrations: [starlight(xbergStarlightConfig({ title: "my-site", githubUrl: "https://github.com/xberg-io/my-site" }))],
 };
 ```

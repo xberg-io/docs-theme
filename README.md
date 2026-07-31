@@ -1,7 +1,7 @@
 # @xberg-io/docs-theme
 
 Shared [Astro Starlight](https://starlight.astro.build) theme for xberg.io documentation sites.
-One versioned package carries the Kreuzberg Cloud documentation system — warm cream/deep-purple
+One versioned package carries the xberg.io documentation system — warm cream/deep-purple
 surfaces, teal accents, Geist typography, square rule-bound components, CDN assets, analytics,
 Open Graph defaults, and `llms.txt` generation — so every repo stays consistent without copying
 the presentation layer around.
