@@ -6,12 +6,12 @@ trim_trailing_whitespace = true
 
 [discovery]
 exclude = [
-    "**/node_modules/**",
-    "**/dist/**",
-    "**/.astro/**",
-    "**/pnpm-lock.yaml",
-    "crates/*-ffi/include/*.h",
-    "packages/go/include/*.h",
+  "**/node_modules/**",
+  "**/dist/**",
+  "**/.astro/**",
+  "**/pnpm-lock.yaml",
+  "crates/*-ffi/include/*.h",
+  "packages/go/include/*.h",
 ]
 
 [hooks]
@@ -19,20 +19,20 @@ stages = ["pre-commit"]
 
 [hooks.builtin]
 lint = { exclude = [
-    "**/node_modules/**",
-    "**/dist/**",
-    "**/.astro/**",
-    "**/pnpm-lock.yaml",
-    "crates/*-ffi/include/*.h",
-    "packages/go/include/*.h",
+  "**/node_modules/**",
+  "**/dist/**",
+  "**/.astro/**",
+  "**/pnpm-lock.yaml",
+  "crates/*-ffi/include/*.h",
+  "packages/go/include/*.h",
 ] }
 fmt = { exclude = [
-    "**/node_modules/**",
-    "**/dist/**",
-    "**/.astro/**",
-    "**/pnpm-lock.yaml",
-    "crates/*-ffi/include/*.h",
-    "packages/go/include/*.h",
+  "**/node_modules/**",
+  "**/dist/**",
+  "**/.astro/**",
+  "**/pnpm-lock.yaml",
+  "crates/*-ffi/include/*.h",
+  "packages/go/include/*.h",
 ] }
 commit = { stages = ["commit-msg"] }
 file_safety = { exclude = ["**/pnpm-lock.yaml", "crates/*-ffi/include/*.h", "packages/go/include/*.h"] }
@@ -44,36 +44,36 @@ remove_fixme = false
 remove_docs = false
 use_default_ignores = true
 preserve_patterns = [
-    "SAFETY",
-    "HACK",
-    "WORKAROUND",
-    "NOTE",
-    "Copyright",
-    "Licensed",
-    "License",
-    "SPDX",
-    "Apache",
-    "MIT",
-    "WITHOUT WARRANTIES",
-    "limitations under the License",
-    "copyright",
-    "licensed",
-    "license",
-    "apache",
-    "you may not use this file except in compliance",
-    "You may obtain a copy of the License",
-    "you may obtain a copy of the license",
-    "http://www.apache.org/licenses/LICENSE-2.0",
-    "http://www.apache.org/licenses/license-2.0",
-    "Unless required by applicable law",
-    "unless required by applicable law",
-    "distributed under the License",
-    "distributed under the license",
-    "AS IS",
-    "as is",
-    "without warranties",
-    "specific language governing permissions",
-    "limitations under the license",
+  "SAFETY",
+  "HACK",
+  "WORKAROUND",
+  "NOTE",
+  "Copyright",
+  "Licensed",
+  "License",
+  "SPDX",
+  "Apache",
+  "MIT",
+  "WITHOUT WARRANTIES",
+  "limitations under the License",
+  "copyright",
+  "licensed",
+  "license",
+  "apache",
+  "you may not use this file except in compliance",
+  "You may obtain a copy of the License",
+  "you may obtain a copy of the license",
+  "http://www.apache.org/licenses/LICENSE-2.0",
+  "http://www.apache.org/licenses/license-2.0",
+  "Unless required by applicable law",
+  "unless required by applicable law",
+  "distributed under the License",
+  "distributed under the license",
+  "AS IS",
+  "as is",
+  "without warranties",
+  "specific language governing permissions",
+  "limitations under the license",
 ]
 
 [per-file-ignores]
