@@ -30,6 +30,10 @@
   --sl-color-accent-low: oklch(0.94 0.035 176.66);
   --sl-color-accent: var(--xb-green);
   --sl-color-accent-high: #174b43;
+  /* Focus rings need >=3:1 against the surface they sit on (WCAG 2.2 SC 1.4.11).
+     The bright brand green clears that on dark surfaces (12:1) but not on the
+     white input in light mode (1.69:1), so light mode uses the deep accent. */
+  --xb-focus-ring: var(--sl-color-accent-high);
   --sl-color-white: var(--xb-ink);
   --sl-color-gray-1: #302847;
   --sl-color-gray-2: #554e67;
@@ -51,6 +55,7 @@
   --sl-color-accent-low: oklch(0.31 0.04 176.66);
   --sl-color-accent: var(--xb-green-bright);
   --sl-color-accent-high: oklch(0.95 0.03 176.66);
+  --xb-focus-ring: var(--sl-color-accent);
   --sl-color-white: var(--xberg-light-gray);
   --sl-color-gray-1: oklch(0.9 0.01 90);
   --sl-color-gray-2: oklch(0.78 0.015 292);
@@ -152,7 +157,10 @@ header.header select {
   color: var(--sl-color-gray-2) !important;
 }
 
-header.header site-search button {
+/* Scope to the trigger only: the search <dialog> is a descendant of <site-search>,
+   so an unscoped `site-search button` rule also matches Pagefind's own clear
+   button, stretching it to full width over the input. */
+header.header site-search button[data-open-modal] {
   width: 100%;
   padding-inline: 1rem !important;
   background: var(--sl-color-gray-7) !important;
@@ -164,20 +172,39 @@ header.header site-search button {
   transition: border-color 180ms ease, background 180ms ease !important;
 }
 
-header.header site-search button:disabled {
+header.header site-search button[data-open-modal]:disabled {
   color: var(--sl-color-white) !important;
   cursor: pointer;
   opacity: 1 !important;
 }
 
-header.header site-search button svg {
+header.header site-search button[data-open-modal] svg {
   color: var(--sl-color-white) !important;
 }
 
-header.header site-search button:hover {
+header.header site-search button[data-open-modal]:hover {
   background: color-mix(in oklch, var(--sl-color-gray-6) 78%, transparent) !important;
   border-color: color-mix(in oklch, var(--xberg-cyan) 45%, var(--xb-border)) !important;
   color: var(--sl-color-white) !important;
+}
+
+/* The UA focus ring follows the OS accent colour (orange on many machines) and
+   clashes with the brand-green border Pagefind already applies on focus. Pin the
+   ring to the brand green instead. Kept as a real `outline` rather than a
+   box-shadow so it survives Windows High Contrast Mode. */
+header.header site-search .pagefind-ui__search-input:focus,
+header.header site-search .pagefind-ui__search-input:focus-visible {
+  border-color: var(--xb-focus-ring) !important;
+  outline: 2px solid var(--xb-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Same ring on the rest of the search modal, so keyboard focus reads the same
+   whether you're in the input, on the clear button, or walking the results. */
+header.header site-search .pagefind-ui__search-clear:focus-visible,
+header.header site-search .pagefind-ui__result-link:focus-visible {
+  outline: 2px solid var(--xb-focus-ring) !important;
+  outline-offset: 2px;
 }
 
 header.header .right-group {
