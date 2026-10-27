@@ -12,6 +12,8 @@ exclude = [
   "**/pnpm-lock.yaml",
   "crates/*-ffi/include/*.h",
   "packages/go/include/*.h",
+  "/.ai-rulez/.generated-manifest.json",
+  "/.mcp.json",
 ]
 
 [hooks]
@@ -25,6 +27,8 @@ lint = { exclude = [
   "**/pnpm-lock.yaml",
   "crates/*-ffi/include/*.h",
   "packages/go/include/*.h",
+  "/.ai-rulez/.generated-manifest.json",
+  "/.mcp.json",
 ] }
 fmt = { exclude = [
   "**/node_modules/**",
@@ -33,9 +37,17 @@ fmt = { exclude = [
   "**/pnpm-lock.yaml",
   "crates/*-ffi/include/*.h",
   "packages/go/include/*.h",
+  "/.ai-rulez/.generated-manifest.json",
+  "/.mcp.json",
 ] }
 commit = { stages = ["commit-msg"] }
-file_safety = { exclude = ["**/pnpm-lock.yaml", "crates/*-ffi/include/*.h", "packages/go/include/*.h"] }
+file_safety = { exclude = [
+  "**/pnpm-lock.yaml",
+  "crates/*-ffi/include/*.h",
+  "packages/go/include/*.h",
+  "/.ai-rulez/.generated-manifest.json",
+  "/.mcp.json",
+] }
 
 [lint.uncomment]
 enabled = true
@@ -89,3 +101,9 @@ preserve_patterns = [
 "crates/*-ffi/include/*.h" = ["comment", "doc-comment"]
 "packages/go/include/*.h" = ["comment", "doc-comment"]
 "Package.swift" = ["comment", "doc-comment"]
+
+[[hooks.sources]]
+id = "ai-rulez"
+git = "https://github.com/Goldziher/ai-rulez.git"
+revision = "v5.7.0"
+hooks = ["ai-rulez-validate"]
