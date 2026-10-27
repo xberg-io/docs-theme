@@ -54,7 +54,7 @@ Xberg Docs Theme is written following strict AI engineering practices. That is, 
 
 ### Conventions
 
-We use the tool `ai-rulez`, vibe coded by @Goldziher, to manage our AI conventions. You are encouraged to use this tool — running the `task setup` will get you going, or run in your terminal:
+We use the tool `ai-rulez`, vibe coded by @Goldziher, to manage our AI conventions. You are encouraged to use this tool — run in your terminal:
 
 ```sh
 npx -y ai-rulez@latest generate
