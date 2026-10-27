@@ -62,6 +62,15 @@ npx -y ai-rulez@latest generate
 
 This will be scaffold the AI agent conventions (e.g. CLAUDE.md, AGENTS.md, subagents, skills, etc.). You can see the AGENTS.md generated afterwards.
 
+### Hooks
+
+The `ai-rulez-validate` pre-commit hook runs the `ai-rulez` binary on your `PATH` (5.7.0 or later), which poly only uses once you opt into its `system` channel in the gitignored `poly.local.toml`:
+
+```sh
+printf '\n[hook_preferences]\nchannels = ["system"]\n' >> poly.local.toml
+poly hooks install
+```
+
 ### Customization
 
 If you want to customize your coding agents, create your own local configuration for ai-rulez, or create a local file for your agent(s) of choice `AGENTS.local.md` etc.
