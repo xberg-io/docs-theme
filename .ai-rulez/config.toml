@@ -1,7 +1,7 @@
 
 version = "5.0"
 name = 'docs-theme'
-description = 'Shared Astro Starlight theme for xberg.io documentation sites'
+description = 'Shared Astro Starlight theme for the organization documentation sites'
 gitignore = true
 # ~keep The manifest is committed so CI can detect stale generated files.
 gitignore_exclude = [".ai-rulez/.generated-manifest.json"]
