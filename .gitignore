@@ -25,6 +25,7 @@ plugin/.ai-rulez/.generated-manifest.json
 
 # BEGIN ai-rulez (DO NOT EDIT - managed by ai-rulez)
 .agents/skills/
+.ai-rulez/.config.local.*
 .codex/agents/
 .mcp.json
 .opencode/agents/
