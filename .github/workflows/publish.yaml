@@ -27,15 +27,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Set up pnpm
-        uses: pnpm/action-setup@v6
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v7
+      - name: Set up Node.js and pnpm
+        uses: xberg-io/actions/setup-mise@v1
         with:
-          node-version: "24"
-          registry-url: "https://registry.npmjs.org"
-          cache: pnpm
+          install-args: node pnpm
 
       - name: Upgrade npm (trusted publishing support)
         run: npm install -g npm@latest
