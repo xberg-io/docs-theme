@@ -1,0 +1,5 @@
+baseline = "v1.2.0"
+
+[overrides.pnpm]
+version = "11.9.0"
+reason = "package.json packageManager pins pnpm 11.9.0, which wrote pnpm-lock.yaml; move both together"
