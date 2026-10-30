@@ -27,6 +27,7 @@ plugin/.ai-rulez/.generated-manifest.json
 .agents/skills/
 .ai-rulez/.config.local.*
 .codex/agents/
+.codex/config.toml
 .mcp.json
 .opencode/agents/
 .opencode/commands/
