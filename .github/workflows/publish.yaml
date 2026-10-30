@@ -32,9 +32,6 @@ jobs:
         with:
           install-args: node pnpm
 
-      - name: Upgrade npm (trusted publishing support)
-        run: npm install -g npm@latest
-
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
 
