@@ -15,7 +15,7 @@ supplies everything else.
 - `llms.txt` generation via `starlight-llms-txt`.
 
 :::note
-Brand assets resolve from jsDelivr (`@v1`). A brand refresh is a tag bump in `xberg-io/assets` —
+Brand assets resolve from jsDelivr (`@v1`). A brand refresh is an `xberg-io/assets` release that moves `v1` —
 no change needed in consuming repos.
 :::
 

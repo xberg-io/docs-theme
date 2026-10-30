@@ -2,7 +2,7 @@
  * @typedef {import("./index.d.ts").XbergStarlightOptions} XbergStarlightOptions
  */
 
-const CDN = "https://cdn.jsdelivr.net/gh/xberg-io/assets@v1.0.0";
+const CDN = "https://cdn.jsdelivr.net/gh/xberg-io/assets@v1";
 
 const DEFAULT_GA_ID = "G-8G4NQW55PF";
 const DEFAULT_ADS_ID = "AW-17853694443";

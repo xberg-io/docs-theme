@@ -73,7 +73,7 @@ in the brand stylesheet, the CDN logo (`SiteTitle` override), and the favicon/OG
 | `starlight`                         | —                                        | Escape hatch for extra Starlight config.               |
 
 Brand assets are pulled from [`xberg-io/assets`](https://github.com/xberg-io/assets) via jsDelivr
-(`@v1`); nothing is bundled, so a brand refresh is a tag bump there.
+(`@v1`); nothing is bundled, so a brand refresh reaches every site once an assets release moves `v1`.
 
 ## Develop
 
