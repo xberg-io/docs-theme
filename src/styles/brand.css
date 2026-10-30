@@ -169,7 +169,9 @@ header.header site-search button[data-open-modal] {
   color: var(--sl-color-white) !important;
   cursor: pointer;
   opacity: 1 !important;
-  transition: border-color 180ms ease, background 180ms ease !important;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease !important;
 }
 
 header.header site-search button[data-open-modal]:disabled {
@@ -232,7 +234,9 @@ header.header .social-icons::after {
 
 header.header .social-icons a,
 header.header .right-group button {
-  transition: color 180ms ease, transform 180ms ease;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
 }
 
 header.header .social-icons a:hover,
@@ -409,7 +413,9 @@ main:not(:has(.xb-landing)) > .content-panel:first-child + .content-panel {
   width: 0.55rem;
   height: 0.55rem;
   background: var(--xberg-purple);
-  box-shadow: 1rem 0 0 var(--xberg-cyan), 2rem 0 0 color-mix(in oklch, var(--xberg-light-gray) 65%, transparent);
+  box-shadow:
+    1rem 0 0 var(--xberg-cyan),
+    2rem 0 0 color-mix(in oklch, var(--xberg-light-gray) 65%, transparent);
   content: "";
 }
 
@@ -673,7 +679,9 @@ main:not(:has(.xb-landing)) > .content-panel:first-child + .content-panel {
   letter-spacing: 0.055em;
   line-height: 1.35;
   text-transform: uppercase;
-  transition: border-color 160ms ease, background 160ms ease;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease;
 }
 
 .pagination-links a[rel="next"] {
@@ -1044,7 +1052,10 @@ main:has(.xb-landing) .sl-container {
   font-weight: 500;
   line-height: 1;
   text-decoration: none !important;
-  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease;
 }
 
 .xb-button:hover {
@@ -1353,7 +1364,7 @@ main:has(.xb-landing) .sl-container {
     border-inline-start: 0;
   }
 
-  .xb-proof > div:nth-child(n+3) {
+  .xb-proof > div:nth-child(n + 3) {
     border-top: 1px solid var(--xb-border);
   }
 

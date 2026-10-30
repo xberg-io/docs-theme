@@ -21,11 +21,11 @@ Destructive things look like this.
 
 ## Table
 
-| Option        | Default          | Notes                        |
-| ------------- | ---------------- | ---------------------------- |
-| `title`       | —                | Required.                    |
-| `googleAdsId` | `AW-17853694443` | Canonical shared account.    |
-| `llmsTxt`     | `{}`             | Set `false` to disable.      |
+| Option        | Default          | Notes                     |
+| ------------- | ---------------- | ------------------------- |
+| `title`       | —                | Required.                 |
+| `googleAdsId` | `AW-17853694443` | Canonical shared account. |
+| `llmsTxt`     | `{}`             | Set `false` to disable.   |
 
 ## Code
 
@@ -34,6 +34,8 @@ import starlight from "@astrojs/starlight";
 import { xbergStarlightConfig } from "@xberg-io/docs-theme";
 
 export default {
-	integrations: [starlight(xbergStarlightConfig({ title: "my-site", githubUrl: "https://github.com/xberg-io/my-site" }))],
+  integrations: [
+    starlight(xbergStarlightConfig({ title: "my-site", githubUrl: "https://github.com/xberg-io/my-site" })),
+  ],
 };
 ```
