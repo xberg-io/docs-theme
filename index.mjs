@@ -6,6 +6,7 @@ const CDN = "https://cdn.jsdelivr.net/gh/xberg-io/assets@v1";
 
 const DEFAULT_GA_ID = "G-8G4NQW55PF";
 const DEFAULT_ADS_ID = "AW-17853694443";
+const FAVICON = `${CDN}/docs/app-icon.svg`;
 const DEFAULT_OG_IMAGE = `${CDN}/social/open-graph-card.png`;
 const REDDIT_URL = "https://www.reddit.com/r/xberg/";
 const DISCORD_URL = "https://discord.gg/xt9WY3GnKR";
@@ -27,7 +28,7 @@ function analyticsHead(gaId, adsId) {
 function faviconHead() {
   return [
     { tag: "link", attrs: { rel: "icon", href: `${CDN}/favicon/favicon.ico`, sizes: "any" } },
-    { tag: "link", attrs: { rel: "icon", type: "image/svg+xml", href: `${CDN}/docs/app-icon.svg` } },
+    { tag: "link", attrs: { rel: "icon", type: "image/svg+xml", href: FAVICON } },
     {
       tag: "link",
       attrs: { rel: "icon", type: "image/png", sizes: "32x32", href: `${CDN}/favicon/favicon-32x32.png` },
@@ -100,6 +101,7 @@ export function xbergStarlightConfig(options) {
   return {
     ...starlightOverrides,
     title,
+    favicon: FAVICON,
     ...(description ? { description } : {}),
     social: resolvedSocial,
     ...(editBaseUrl ? { editLink: { baseUrl: editBaseUrl } } : {}),
