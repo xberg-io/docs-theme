@@ -103,7 +103,7 @@ export function xbergStarlightConfig(options) {
   return {
     ...starlightOverrides,
     title,
-    favicon: FAVICON,
+    favicon: starlightOverrides.favicon ?? FAVICON,
     ...(description ? { description } : {}),
     social: resolvedSocial,
     ...(editBaseUrl ? { editLink: { baseUrl: editBaseUrl } } : {}),
