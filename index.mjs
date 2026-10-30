@@ -8,8 +8,9 @@ const DEFAULT_GA_ID = "G-8G4NQW55PF";
 const DEFAULT_ADS_ID = "AW-17853694443";
 const FAVICON = `${CDN}/docs/app-icon.svg`;
 const DEFAULT_OG_IMAGE = `${CDN}/social/open-graph-card.png`;
-const REDDIT_URL = "https://www.reddit.com/r/xberg/";
 const DISCORD_URL = "https://discord.gg/xt9WY3GnKR";
+const X_URL = "https://x.com/xberg_io";
+const LINKEDIN_URL = "https://www.linkedin.com/company/xberg-io";
 
 /** @param {string | undefined} gaId @param {string | undefined} adsId */
 function analyticsHead(gaId, adsId) {
@@ -94,7 +95,8 @@ export function xbergStarlightConfig(options) {
   const defaultSocial = [
     ...(githubUrl ? [{ icon: "github", label: "GitHub", href: githubUrl }] : []),
     { icon: "discord", label: "Discord", href: DISCORD_URL },
-    { icon: "reddit", label: "Reddit", href: REDDIT_URL },
+    { icon: "x.com", label: "X", href: X_URL },
+    { icon: "linkedin", label: "LinkedIn", href: LINKEDIN_URL },
   ];
   const resolvedSocial = social ?? defaultSocial;
 

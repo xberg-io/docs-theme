@@ -57,20 +57,20 @@ in the brand stylesheet, the CDN logo (`SiteTitle` override), and the favicon/OG
 
 ## Options
 
-| Option                              | Default                                  | Notes                                                  |
-| ----------------------------------- | ---------------------------------------- | ------------------------------------------------------ |
-| `title` (required)                  | —                                        | Tab title + product name beside the nav icon.          |
-| `description`                       | —                                        | Meta / social description.                             |
-| `githubUrl`                         | —                                        | Drives the default GitHub social link.                 |
-| `editBaseUrl`                       | —                                        | `editLink.baseUrl`.                                    |
-| `ogImage`                           | shared OG card on jsDelivr               | OG/Twitter image URL.                                  |
-| `googleAnalyticsId`                 | `G-8G4NQW55PF`                           | Canonical shared GA4 property.                         |
-| `googleAdsId`                       | `AW-17853694443`                         | Canonical shared Ads account.                          |
-| `sidebar`                           | —                                        | Starlight sidebar.                                     |
-| `social`                            | GitHub + shared Discord + shared r/xberg | Starlight social links.                                |
-| `plugins`                           | `[]`                                     | Starlight plugin instances, e.g. `starlightLlmsTxt()`. |
-| `head` / `customCss` / `components` | —                                        | Appended/merged after the theme's own.                 |
-| `starlight`                         | —                                        | Escape hatch for extra Starlight config.               |
+| Option                              | Default                                 | Notes                                                  |
+| ----------------------------------- | --------------------------------------- | ------------------------------------------------------ |
+| `title` (required)                  | —                                       | Tab title + product name beside the nav icon.          |
+| `description`                       | —                                       | Meta / social description.                             |
+| `githubUrl`                         | —                                       | Drives the default GitHub social link.                 |
+| `editBaseUrl`                       | —                                       | `editLink.baseUrl`.                                    |
+| `ogImage`                           | shared OG card on jsDelivr              | OG/Twitter image URL.                                  |
+| `googleAnalyticsId`                 | `G-8G4NQW55PF`                          | Canonical shared GA4 property.                         |
+| `googleAdsId`                       | `AW-17853694443`                        | Canonical shared Ads account.                          |
+| `sidebar`                           | —                                       | Starlight sidebar.                                     |
+| `social`                            | GitHub + shared Discord, X and LinkedIn | Starlight social links.                                |
+| `plugins`                           | `[]`                                    | Starlight plugin instances, e.g. `starlightLlmsTxt()`. |
+| `head` / `customCss` / `components` | —                                       | Appended/merged after the theme's own.                 |
+| `starlight`                         | —                                       | Escape hatch for extra Starlight config.               |
 
 Brand assets are pulled from [`xberg-io/assets`](https://github.com/xberg-io/assets) via jsDelivr
 (`@v1`); nothing is bundled, so a brand refresh reaches every site once an assets release moves `v1`.
