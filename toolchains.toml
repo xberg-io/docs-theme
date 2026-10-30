@@ -1,4 +1,4 @@
-baseline = "v1.3.3"
+baseline = "v1.9.0"
 
 [overrides.pnpm]
 version = "11.9.0"
