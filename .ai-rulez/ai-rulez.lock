@@ -4,7 +4,7 @@
 version = 1
 ai_rulez_version = '5.9.6'
 scope = 'all'
-tree = 'sha256:dc495b7995d227eb605919e0155339b863f11d235cb5069b22c74800df2d4617'
+tree = 'sha256:13b39e02ee308168e0ce0528d124865e0a8e2a28ccd52d2a1d3e53b64a1e5b85'
 
 [[include]]
 name = 'xberg-cicd'
@@ -143,12 +143,6 @@ name = 'skill-authoring'
 source = 'builtin://universal/ai-governance/skills/skill-authoring/SKILL.md'
 commit = ''
 digest = 'sha256:7ab2b543dc6608f204c957fedfc55ae902d22fda9dc8a52252330ff9b1406ff1'
-
-[[served]]
-name = 'task-runner'
-source = 'builtin://universal/token-efficiency/skills/task-runner/SKILL.md'
-commit = ''
-digest = 'sha256:c57056e3a74a261b3a9d47638726c7d1f64c76b255838b6aaa3e635f3ffa8618'
 
 [[served]]
 name = 'tdd-workflow'
