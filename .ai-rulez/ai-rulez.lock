@@ -2,7 +2,7 @@
 # Refresh it with `ai-rulez lock`; `ai-rulez generate --locked` fails when it is stale.
 
 version = 1
-ai_rulez_version = '5.9.4'
+ai_rulez_version = '5.9.6'
 scope = 'all'
 tree = 'sha256:4b3d921532591cf3ab74e1717544a220a3a2a3ca9e5cae1354a7861f0bed8359'
 
