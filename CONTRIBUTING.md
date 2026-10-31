@@ -8,19 +8,22 @@ Please begin by reading our AI section below, followed by the getting started gu
 
 ## Getting Started
 
-Make sure to have [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/) 20+ with [pnpm](https://pnpm.io/) installed on your machine.
+Make sure to have [Git](https://git-scm.com/) and [mise](https://mise.jdx.dev/) installed on your machine; mise installs
+the pinned Node.js and pnpm.
 
 ```bash
-pnpm install
+mise install
+mise run install
 ```
 
 ## Quick reference
 
-| Command       | What it does            |
-| ------------- | ----------------------- |
-| `pnpm build`  | Build the theme package |
-| `pnpm lint`   | Lint the source         |
-| `pnpm format` | Format the source       |
+| Command            | What it does                                     |
+| ------------------ | ------------------------------------------------ |
+| `mise run install` | Install the locked workspace dependencies        |
+| `mise run build`   | Build the example site against the local theme   |
+| `mise run check`   | Pack the package without publishing              |
+| `mise run publish` | Publish to npm, skipping a version already there |
 
 ## What to keep in mind
 

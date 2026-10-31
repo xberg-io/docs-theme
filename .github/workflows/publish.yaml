@@ -33,17 +33,11 @@ jobs:
           install-args: node pnpm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --ignore-scripts
+        run: mise run install
 
       - name: Pack (validate)
-        run: npm publish --dry-run --access public
+        run: mise run check
 
       - name: Publish (Trusted Publishing + provenance)
         if: ${{ github.event_name == 'release' || inputs.dry_run != true }}
-        run: |
-          ver="$(node -p "require('./package.json').version")"
-          if npm view "@xberg-io/docs-theme@${ver}" version >/dev/null 2>&1; then
-            echo "skip @xberg-io/docs-theme@${ver} (already on npm)"
-            exit 0
-          fi
-          npm publish --access public --provenance
+        run: mise run publish

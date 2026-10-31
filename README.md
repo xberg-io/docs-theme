@@ -78,9 +78,9 @@ Brand assets are pulled from [`xberg-io/assets`](https://github.com/xberg-io/ass
 ## Develop
 
 ```sh
-pnpm install
+mise run install
 pnpm --dir example dev     # runs the example site against the local theme
-pnpm --dir example build
+mise run build
 ```
 
 ## Publish
