@@ -419,18 +419,6 @@ main:not(:has(.xb-landing)) > .content-panel:first-child + .content-panel {
   content: "";
 }
 
-.expressive-code figcaption.header::after {
-  margin-inline-start: auto;
-  margin-inline-end: 2.5rem;
-  color: color-mix(in oklch, var(--xberg-light-gray) 72%, transparent);
-  content: "typescript";
-  font-family: var(--sl-font-mono);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .expressive-code pre {
   padding-block: 1rem !important;
 }
