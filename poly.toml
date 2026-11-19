@@ -1,8 +1,4 @@
-[defaults]
-line_length = 120
-line_ending = "lf"
-final_newline = true
-trim_trailing_whitespace = true
+required_version = ">=0.36.0"
 
 [discovery]
 exclude = [
@@ -10,8 +6,6 @@ exclude = [
   "**/dist/**",
   "**/.astro/**",
   "**/pnpm-lock.yaml",
-  "crates/*-ffi/include/*.h",
-  "packages/go/include/*.h",
   "/.ai-rulez/.generated-manifest.json",
   "/.mcp.json",
 ]
@@ -25,8 +19,6 @@ lint = { exclude = [
   "**/dist/**",
   "**/.astro/**",
   "**/pnpm-lock.yaml",
-  "crates/*-ffi/include/*.h",
-  "packages/go/include/*.h",
   "/.ai-rulez/.generated-manifest.json",
   "/.mcp.json",
 ] }
@@ -35,21 +27,17 @@ fmt = { exclude = [
   "**/dist/**",
   "**/.astro/**",
   "**/pnpm-lock.yaml",
-  "crates/*-ffi/include/*.h",
-  "packages/go/include/*.h",
   "/.ai-rulez/.generated-manifest.json",
   "/.mcp.json",
 ] }
 commit = { stages = ["commit-msg"] }
-file_safety = { exclude = [
-  "**/pnpm-lock.yaml",
-  "crates/*-ffi/include/*.h",
-  "packages/go/include/*.h",
-  "/.ai-rulez/.generated-manifest.json",
-  "/.mcp.json",
-] }
+file_safety = { exclude = ["**/pnpm-lock.yaml", "/.ai-rulez/.generated-manifest.json", "/.mcp.json"] }
 
-[lint.uncomment]
+[engines.typos]
+# typos is opt-in in poly v2; this keeps the v1 default (on).
+enabled = true
+
+[engines.uncomment]
 enabled = true
 remove_todos = false
 remove_fixme = false
@@ -88,22 +76,37 @@ preserve_patterns = [
   "limitations under the license",
 ]
 
-[per-file-ignores]
-"e2e/**" = ["comment", "doc-comment"]
-"**/e2e/**" = ["comment", "doc-comment"]
-"test_apps/**" = ["comment", "doc-comment"]
-"**/test_apps/**" = ["comment", "doc-comment"]
-"docs/assets/**" = ["comment", "doc-comment"]
-"**/generated/**" = ["comment", "doc-comment"]
-"**/*.generated.*" = ["comment", "doc-comment"]
-"**/*.g.*" = ["comment", "doc-comment"]
-"**/*.freezed.*" = ["comment", "doc-comment"]
-"crates/*-ffi/include/*.h" = ["comment", "doc-comment"]
-"packages/go/include/*.h" = ["comment", "doc-comment"]
-"Package.swift" = ["comment", "doc-comment"]
-
 [[hooks.sources]]
 id = "ai-rulez"
 git = "https://github.com/Goldziher/ai-rulez.git"
 revision = "v5"
 hooks = ["ai-rulez-validate"]
+
+[per_file_ignores]
+# astro:content is an Astro virtual module typed by generated .astro/ files, which are not committed. ~keep
+"example/src/content.config.ts" = ["TS2307"]
+
+[engines.skif]
+enabled = true
+dir = "."
+# The root package is the published @xberg-io/docs-theme, so it cannot be private. ~keep
+ignore = ["root-package-private-field"]
+
+[engines.tsrs]
+enabled = true
+dir = "."
+
+[engines.harper]
+enabled = true
+# Off: rules that contradict the org's sentence-case headings and no-Oxford-comma style, or misread technical prose
+# (denylist, MB, stdin). ~keep
+ignore = [
+  "UseTitleCase",
+  "OxfordComma",
+  "SplitWords",
+  "OrthographicConsistency",
+  "ExpandMemoryShorthands",
+  "ExpandStandardInputAndOutput",
+  "ExpandConfiguration",
+  "ExpandMinimum",
+]
